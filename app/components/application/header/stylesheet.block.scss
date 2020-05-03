@@ -1,0 +1,23 @@
+/* ==========================================================================
+   # APPLICATION HEADER
+   ========================================================================== */
+
+:scope {
+  block-name: c-application-header;
+  background-color: var(--color-white);
+}
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .search {
+      padding: var(--spacing--small);
+    }
+
+  .notifications {
+    position: fixed;
+    top: var(--spacing-base);
+    right: var(--spacing-base);
+  }

@@ -1,0 +1,27 @@
+<div
+  block:scope
+  ...attributes
+>
+  {{#if this.session.isAuthenticated}}
+    <Application::Navigation />
+  {{/if}}
+
+  <div block:class="content">
+    {{#if this.session.isAuthenticated}}
+      <Application::Header />
+    {{/if}}
+
+    <main block:class="main">
+      {{yield}}
+    </main>
+
+    <Application::Footer />
+  </div>
+
+  <Application::CookieNotice
+    @toggleCookieNotice={{this.toggleCookieNotice}}
+    @showCookieNotice={{this.showCookieNotice}}
+  />
+
+  <div id="tether-target"></div>
+</div>

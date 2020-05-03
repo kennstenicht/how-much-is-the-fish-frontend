@@ -1,0 +1,40 @@
+import JSONAPIAdapter from '@ember-data/adapter/json-api';
+import { inject as service } from '@ember/service';
+import { getOwner } from '@ember/application';
+import { computed } from '@ember/object';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
+
+export default class ApplicationAdapter extends JSONAPIAdapter.extend(
+  DataAdapterMixin
+) {
+  // Services
+  @service fastboot;
+  @service session;
+
+
+  // Defaults
+  namespace = 'v1';
+
+
+  // Getter and setter
+  @computed('fastboot.request.{protocol,host}')
+  get host() {
+    const ENV = getOwner(this).resolveRegistration('config:environment');
+
+    if (ENV.environment !== 'development' && this.fastboot.isFastBoot) {
+      const protocol = this.fastboot.request.protocol;
+      const host = this.fastboot.request.host;
+
+      return `${protocol}//${host}`;
+    } else {
+      return null;
+    }
+  }
+
+
+  // Hooks
+  authorize(xhr) {
+    let { jwt } = this.session.data.authenticated;
+    xhr.setRequestHeader('Authorization', `Bearer ${jwt}`);
+  }
+}

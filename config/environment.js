@@ -6,6 +6,25 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
+    'ember-simple-auth-token': {
+      serverTokenEndpoint: '/v1/user_token',
+      tokenPropertyName: 'jwt',
+      refreshAccessTokens: false,
+      tokenExpirationInvalidateSession: true,
+      tokenExpireName: 'exp'
+    },
+
+    fastboot: {
+      hostWhitelist: ['how-much-is-the-fish.ag-prop.com', /^localhost:\d+$/, /^192.*:\d+$/]
+    },
+
+    flashMessageDefaults: {
+      timeout: 4000,
+      extendedTimeout: 2000
+    },
+
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

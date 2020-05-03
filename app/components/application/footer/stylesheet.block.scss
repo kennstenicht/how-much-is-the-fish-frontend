@@ -1,0 +1,24 @@
+/* ==========================================================================
+   # APPLICATION FOOTER
+   ========================================================================== */
+
+@export wrapper from '../../../styles/objects/objects.wrapper.scss';
+
+:scope {
+  block-name: c-application-footer;
+  padding: 20px;
+  background-color: var(--color-white);
+}
+
+  .wrapper {
+    display: flex;
+  }
+
+    .navigation {
+      width: 50%;
+    }
+
+    .copy {
+      width: 50%;
+      text-align: right;
+    }

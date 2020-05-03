@@ -1,0 +1,19 @@
+<footer
+  block:scope
+  ...attributes
+>
+  <div wrapper:scope>
+    <div block:class="wrapper">
+      <div block:class="navigation">
+        Footer Naviagtion
+      </div>
+      <div block:class="copy">
+        {{t
+          "application.footer.copy"
+          currentYear=this.currentYear
+          htmlSafe=true
+        }}
+      </div>
+    </div>
+  </div>
+</footer>
