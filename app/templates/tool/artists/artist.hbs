@@ -1,0 +1,7 @@
+
+<LinkTo @route="tool.artists">Zur Übersicht</LinkTo>
+<h1>{{@model.name}}</h1>
+{{#each @model.events as |event|}}
+  {{event.name}}<br>
+{{/each}}
+{{outlet}}

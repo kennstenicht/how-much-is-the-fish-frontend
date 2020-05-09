@@ -4,21 +4,23 @@
 
 :scope {
   block-name: c-application;
-  display: flex;
-  flex-direction: row;
   min-height: 100vh;
-  background-color: var(--color-grey--light);
 }
 
-  .content {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
+  .notifications {
+    position: fixed;
+    top: var(--spacing-base);
+    right: var(--spacing-base);
   }
 
-    .main {
-      flex-grow: 1;
-    }
 
-@block-global [is-authenticated]
+
+
+
+
+
+
+
+
+
 

@@ -15,8 +15,14 @@
   // Spacing
   --spacing-tiny:           calc(var(--baseline) * 1);
   --spacing-small:          calc(var(--baseline) * 2);
+  --spacing-small-tiny:     calc(var(--baseline) * 3);
   --spacing-base:           calc(var(--baseline) * 4);
+  --spacing-base-tiny:      calc(var(--baseline) * 5);
+  --spacing-base-small:     calc(var(--baseline) * 6);
   --spacing-large:          calc(var(--baseline) * 8);
+  --spacing-large-tiny:     calc(var(--baseline) * 9);
+  --spacing-large-small:    calc(var(--baseline) * 10);
+  --spacing-large-base:     calc(var(--baseline) * 12);
   --spacing-huge:           calc(var(--baseline) * 16);
 
 
@@ -27,18 +33,19 @@
      ======================================================================== */
 
   // Base font size
-  --font-size:              16px;
-  --font-size--small:       14px;
-  --font-size--tiny:        12px;
+  --font-size-large:        18px;
+  --font-size:               16px;
+  --font-size-small:        14px;
+  --font-size-tiny:         12px;
 
 
   // Heading sizes
   --font-size-h1:           36px;
   --font-size-h2:           24px;
   --font-size-h3:           $font-size;
-  --font-size-h4:           $font-size--small;
-  --font-size-h5:           $font-size--small;
-  --font-size-h6:           $font-size--small;
+  --font-size-h4:           $font-size-small;
+  --font-size-h5:           $font-size-small;
+  --font-size-h6:           $font-size-small;
 
   // Line height
   --line-height:            $spacing-base;
@@ -57,22 +64,20 @@
      ======================================================================== */
 
   // Main colors
-  --color-primary:         #494742;
-  --color-secondary:       #e1d7c7;
-  --color-black:           #000000;
+  --color-primary:         #49d29c;
+  --color-secondary:       #89929b;
+  --color-black:           #16171b;
   --color-white:           #ffffff;
 
   // Shades of grey
-  --color-grey--lighter:   #fafafa;
-  --color-grey--light:     #f0f0f0;
-  --color-grey:            #ebebeb;
-  --color-grey--dark:      #e0e0e0;
-  --color-grey--darker:    #333232;
+  --color-grey-light:      #f8f9fb;
+  --color-grey:            #f4f4f4;
+  --color-grey-dark:       #e4e5e7;
 
   // State colors
-  --color-error:           #eb481c;
-  --color-warning:         #f2a82a;
-  --color-success:         #1a8214;
+  --color-error:           #da6848;
+  --color-warning:         #d4a958;
+  --color-success:         #33b96f;
   --color-info:            #ffffe8;
 
 
@@ -83,11 +88,20 @@
      ======================================================================== */
 
   // Border
-  --border-width--small:   1px;
+  --border-width-small:   1px;
   --border-width:          2px;
-  --border-width--large:   4px;
-  --border-width--huge:    10px;
+  --border-width-large:   4px;
 
   // Transition
-  --transition--base:      0.3s ease-in-out;
+  --transition-base:      0.3s ease-in-out;
+
+
+
+
+
+  /* Elements
+     ======================================================================== */
+
+  // Navigation
+  --navigation-width:      320px;
 }

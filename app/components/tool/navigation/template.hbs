@@ -1,0 +1,64 @@
+<nav
+  block:scope
+  ...attributes
+>
+  <div block:class="primary">
+    <div block:class="channels">
+      <div block:class="channel" block:active>
+        AG
+      </div>
+      <div block:class="channel">
+        TM
+      </div>
+      <div block:class="add-channel">
+        +
+      </div>
+    </div>
+    <div block:class="settings">
+      <div block:class="profile">
+        CW
+      </div>
+    </div>
+  </div>
+  <div block:class="secondary">
+    <h1 block:class="title">
+      ag—prop
+    </h1>
+
+    <div block:class="item">
+      <div block:class="icon">
+        {{svg-jar "icn_event"}}
+      </div>
+      <div block:class="label">
+        <LinkTo @route="tool.events">Events</LinkTo>
+      </div>
+    </div>
+
+    <div block:class="item">
+      <div block:class="icon">
+        {{svg-jar "icn_artist" class="o-icon"}}
+      </div>
+      <div block:class="label">
+        <LinkTo @route="tool.artists">Artists</LinkTo>
+      </div>
+    </div>
+
+    <div block:class="item">
+      <div block:class="icon">
+        {{svg-jar "icn_venue"}}
+      </div>
+      <div block:class="label">
+        <LinkTo @route="tool.events">Venues</LinkTo>
+      </div>
+    </div>
+    <div block:class="spacer"></div>
+    <div block:class="item">
+      <div block:class="icon">
+        {{svg-jar "icn_settings"}}
+      </div>
+      <div block:class="label">
+        <LinkTo @route="tool.events">Settings</LinkTo>
+      </div>
+    </div>
+  </div>
+</nav>

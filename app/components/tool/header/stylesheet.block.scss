@@ -1,0 +1,29 @@
+/* ==========================================================================
+   # APPLICATION HEADER
+   ========================================================================== */
+
+// @block application from '../stylesheet.block.scss';
+
+:scope {
+  block-name: c-tool-header;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--navigation-width);
+  padding: var(--spacing-small) var(--spacing-base);
+  border-bottom: var(--border-width-small) solid var(--color-grey);
+  background-color: var(--color-white);
+}
+
+// :scope[application|is-authenticated] {
+//   left: var(--navigation-width);
+// }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .search {
+      padding: 0;
+    }

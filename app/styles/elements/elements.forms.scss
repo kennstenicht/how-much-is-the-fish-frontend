@@ -16,16 +16,16 @@ input:not([type=submit])
      :not([type=checkbox]) {
   padding: var(--spacing-tiny) var(--spacing-small);
   width: 100%;
-  border-width: var(--border-width--small);
+  border-width: var(--border-width-small);
   border-style: solid;
-  border-color: var(--color-grey--dark);
-  background-color: var(--color-grey--lighter);
+  border-color: var(--color-grey-dark);
+  background-color: var(--color-grey-light);
 
   // @include inuit-font-size($inuit-global-font-size);
 
   &:focus {
     outline: none;
-    border-color: var(--color-grey--darker);
+    border-color: var(--color-grey-darker);
   }
 }
 
@@ -43,16 +43,16 @@ input:not([type=button]) {
 textarea {
   padding: var(--spacing-small);
   width: 100%;
-  border-width: var(--border-width--small);
+  border-width: var(--border-width-small);
   border-style: solid;
-  border-color: var(--color-grey--dark);
-  background-color: var(--color-grey--lighter);
+  border-color: var(--color-grey-dark);
+  background-color: var(--color-white);
 
   // @include inuit-font-size($inuit-global-font-size);
 
   &:focus {
     outline: none;
-    border-color: var(--color-grey--darker);
+    border-color: var(--color-grey-dark);
   }
 }
 

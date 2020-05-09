@@ -1,0 +1,120 @@
+/* ==========================================================================
+   # APPLICATION FOOTER
+   ========================================================================== */
+
+@block headings from '../../../styles/utilities/utilities.headings.scss';
+
+:scope {
+  block-name: c-tool-navigation;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: var(--navigation-width);
+  border-right: var(--border-width-small) solid var(--color-grey-dark);
+  background-color: var(--color-grey-light);
+}
+
+  .primary {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--spacing-small);
+    border-right: var(--border-width-small) solid var(--color-grey-dark);
+  }
+
+    .channels {
+      display: flex;
+      flex-direction: column;
+    }
+
+      .channel {
+        flex-shrink: 0;
+        margin-bottom: var(--spacing-tiny);
+        padding: var(--spacing-tiny);
+        width: var(--spacing-base-tiny);
+        height: var(--spacing-base-tiny);
+        border-radius: 50%;
+        background-color: var(--color-grey-dark);
+        text-align: center;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+      }
+
+      .channel[active] {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+      }
+
+      .add-channel {
+        flex-shrink: 0;
+        padding: var(--spacing-tiny);
+        width: var(--spacing-base-tiny);
+        height: var(--spacing-base-tiny);
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+
+        &:hover {
+          background-color: var(--color-grey-dark);
+        }
+      }
+
+    .settings {
+      display: flex;
+      flex-direction: column;
+    }
+
+      .profile {
+        flex-shrink: 0;
+        margin-bottom: var(--spacing-tiny);
+        padding: var(--spacing-tiny);
+        width: var(--spacing-base-tiny);
+        height: var(--spacing-base-tiny);
+        border-radius: 50%;
+        background-color: var(--color-grey-dark);
+        text-align: center;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+      }
+
+  .secondary {
+    flex-grow: 1;
+    padding: var(--spacing-small) var(--spacing-base);
+    display: flex;
+    flex-direction: column;
+  }
+
+    .title {
+      margin-bottom: var(--spacing-large);
+      line-height: 1;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--spacing-tiny);
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+      .icon {
+        flex-shrink: 0;
+        margin-right: var(--spacing-small);
+        width: var(--spacing-small-tiny);
+      }
+
+      .label {
+        flex-grow: 1;
+        font-weight: bold;
+        // font-size: var(--font-size-large);
+      }
+
+    .spacer {
+      flex-grow: 1;
+    }

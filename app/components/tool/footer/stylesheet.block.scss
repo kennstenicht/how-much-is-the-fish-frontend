@@ -1,23 +1,24 @@
 /* ==========================================================================
-   # APPLICATION HEADER
+   # APPLICATION FOOTER
    ========================================================================== */
 
+@export wrapper from '../../../styles/objects/objects.wrapper.scss';
+
 :scope {
-  block-name: c-application-header;
+  block-name: c-tool-footer;
+  padding: 20px;
   background-color: var(--color-white);
 }
 
   .wrapper {
     display: flex;
-    justify-content: space-between;
   }
 
-    .search {
-      padding: var(--spacing--small);
+    .navigation {
+      width: 50%;
     }
 
-  .notifications {
-    position: fixed;
-    top: var(--spacing-base);
-    right: var(--spacing-base);
-  }
+    .copy {
+      width: 50%;
+      text-align: right;
+    }

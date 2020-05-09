@@ -1,0 +1,21 @@
+/* ==========================================================================
+  # APPLICATION
+  ========================================================================== */
+
+:scope {
+  block-name: c-tool;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: var(--color-grey--light);
+}
+
+  .content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+    .main {
+      flex-grow: 1;
+    }

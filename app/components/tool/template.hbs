@@ -1,0 +1,16 @@
+<div
+  block:scope
+  ...attributes
+>
+  <Tool::Navigation />
+
+  <div block:class="content">
+    <Tool::Header />
+
+    <main block:class="main">
+      {{yield}}
+    </main>
+
+    <Tool::Footer />
+  </div>
+</div>
