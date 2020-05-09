@@ -10,7 +10,7 @@ export default class SignInComponent extends Component {
 
   // Actions
   @action
-  signIn(event) {
+  async signIn(event) {
     event.preventDefault();
 
     const credentials = {
@@ -21,9 +21,15 @@ export default class SignInComponent extends Component {
     };
     const authenticator = 'authenticator:jwt';
 
-    this.session.authenticate(authenticator, credentials)
-      .then(this._authenticated.bind(this))
-      .catch(this._rejected.bind(this));
+    try {
+      await this.session.authenticate(authenticator, credentials);
+    } catch(error) {
+      this._rejected.bind(this)
+    }
+
+    if (this.session.isAuthenticated) {
+      this._authenticated.bind(this)
+    }
   }
 
 
