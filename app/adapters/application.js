@@ -31,10 +31,16 @@ export default class ApplicationAdapter extends JSONAPIAdapter.extend(
     }
   }
 
+  @computed('session.data.authenticated.access_token')
+  get headers() {
+    let headers = {};
 
-  // Hooks
-  authorize(xhr) {
-    let { jwt } = this.session.data.authenticated;
-    xhr.setRequestHeader('Authorization', `Bearer ${jwt}`);
+    if (this.session.isAuthenticated) {
+      let { jwt } = this.session.data.authenticated;
+
+      headers['Authorization'] = `Bearer ${jwt}`;
+    }
+
+    return headers;
   }
 }
