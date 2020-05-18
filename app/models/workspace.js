@@ -13,6 +13,7 @@ export default class WorkspaceModel extends Model {
   // Relations
   @hasMany('artist') artists;
   @hasMany('event') events;
+  @hasMany('user') users;
   @hasMany('venue') venues;
 
   // Getter and setter
