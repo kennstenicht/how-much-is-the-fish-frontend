@@ -14,19 +14,6 @@ export default class ApplicationComponent extends Component {
   @tracked showCookieNotice = false;
 
 
-  // Getter and setter
-  get urlSegments() {
-    let routes = this.router
-      .currentURL
-      .substring(1)
-      .split('/')
-      .filter(n => n);
-
-
-    return `${routes[0]}`;
-  }
-
-
   // Hooks
   constructor() {
     super(...arguments);
