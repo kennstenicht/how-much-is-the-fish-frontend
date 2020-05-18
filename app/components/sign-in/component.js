@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 
 export default class SignInComponent extends Component {
   // Services
+  @service currentUser;
   @service flashMessages;
   @service session;
 
@@ -23,6 +24,7 @@ export default class SignInComponent extends Component {
 
     try {
       await this.session.authenticate(authenticator, credentials);
+      await this.currentUser.load();
     } catch(error) {
       this._rejected.bind(this)
     }

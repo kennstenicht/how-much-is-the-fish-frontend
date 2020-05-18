@@ -7,6 +7,7 @@ export default class ApplicationRoute extends Route.extend(
   ApplicationRouteMixin,
 ) {
   // Services
+  @service currentUser;
   @service intl;
   @service moment;
   @service session;
@@ -20,6 +21,8 @@ export default class ApplicationRoute extends Route.extend(
   beforeModel() {
     this.moment.setLocale('de');
     this.intl.setLocale('de');
+
+    return this.currentUser.load();
   }
 
 
