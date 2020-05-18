@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  left: var(--navigation-width);
+  left: calc(var(--navigation-width) + var(--spacing-large));
   padding: var(--spacing-small) var(--spacing-base);
   border-bottom: var(--border-width-small) solid var(--color-grey);
   background-color: var(--color-white);

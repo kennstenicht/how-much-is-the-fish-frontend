@@ -1,0 +1,62 @@
+/* ==========================================================================
+  # APPLICATION FOOTER
+  ========================================================================== */
+
+@import '../../../styles/tools/tools.attention.scss';
+
+:scope {
+  block-name: c-tool-workspaces;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-tiny);
+  border-right: var(--border-width-small) solid var(--color-grey-dark);
+  background-color: var(--color-grey-light);
+}
+
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+
+    .button {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--spacing-tiny);
+      width: var(--spacing-base-small);
+      height: var(--spacing-base-small);
+      border-radius: 50%;
+      background-color: var(--color-grey-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+    }
+
+    .button[active] {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .button {
+      @include attention() {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+      }
+    }
+
+
+    .button[add] {
+      background-color: transparent;
+
+      @include attention() {
+        background-color: var(--color-grey-dark);
+        color: var(--color-black);
+      }
+    }

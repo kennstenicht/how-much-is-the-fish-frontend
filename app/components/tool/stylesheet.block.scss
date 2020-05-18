@@ -10,12 +10,9 @@
   background-color: var(--color-grey--light);
 }
 
-  .content {
-    display: flex;
+  .workspace {
     flex-grow: 1;
-    flex-direction: column;
+    padding: var(--spacing-base);
+    margin-top: var(--spacing-large);
+    margin-left: calc(var(--navigation-width) + var(--spacing-large));
   }
-
-    .main {
-      flex-grow: 1;
-    }

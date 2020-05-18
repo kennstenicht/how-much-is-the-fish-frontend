@@ -8,8 +8,16 @@ export default class ToolRoute extends Route.extend(
   AuthenticatedRouteMixin
 ) {
   // Services
+  @service currentUser;
   @service flashMessages;
   @service intl;
+  @service session;
+
+
+  // Hooks
+  model() {
+    return this.currentUser.user.workspaces;
+  }
 
 
   // Actions
@@ -53,7 +61,7 @@ export default class ToolRoute extends Route.extend(
   @action
   reorderItems(itemModels, draggedModel) {
     const routeName = pluralize(draggedModel.constructor.modelName);
-    const controller = this.controllerFor(`admin.${routeName}.index`);
+    const controller = this.controllerFor(`workspaces.workspace.${routeName}.index`);
 
     itemModels.forEach((record, index) => {
       record.set('position', index);
@@ -66,6 +74,6 @@ export default class ToolRoute extends Route.extend(
 
   // Functions
   transitionToIndex(modelName) {
-    this.transitionTo(`admin.${pluralize(modelName)}`);
+    this.transitionTo(`workspaces.workspace.${pluralize(modelName)}`);
   }
 }

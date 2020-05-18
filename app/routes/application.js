@@ -14,7 +14,7 @@ export default class ApplicationRoute extends Route.extend(
 
 
   // Defaults
-  routeAfterAuthentication = 'intern';
+  routeAfterAuthentication = 'workspaces';
 
 
   // Hooks

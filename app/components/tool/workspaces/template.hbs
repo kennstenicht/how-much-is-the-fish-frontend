@@ -1,0 +1,24 @@
+<nav
+  block:scope
+  ...attributes
+>
+  <div block:class="section">
+    {{#each @workspaces as |workspace|}}
+      <LinkTo
+        @route="workspaces.workspace"
+        @model={{workspace}}
+        block:class="button"
+      >
+        {{workspace.initials}}
+      </LinkTo>
+    {{/each}}
+    <div block:class="button" block:add>
+      +
+    </div>
+  </div>
+  <div block:class="section">
+    <div block:class="button">
+      CW
+    </div>
+  </div>
+</nav>

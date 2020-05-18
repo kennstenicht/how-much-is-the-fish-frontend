@@ -1,0 +1,8 @@
+{{#each @model as |artist|}}
+  <LinkTo
+    @route="workspaces.workspace.artists.artist"
+    @models={{array this.workspace artist}}
+  >
+    {{artist.name}}
+  </LinkTo><br>
+{{/each}}

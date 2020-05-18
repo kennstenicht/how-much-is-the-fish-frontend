@@ -1,13 +1,15 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class ToolArtistsIndexRoute extends Route {
+export default class WorkspacesWorkspaceEventsRoute extends Route {
   // Services
   @service store;
 
 
   // Hooks
   model() {
-    return this.store.findAll('artist');
+    let workspace = this.modelFor('workspaces.workspace');
+
+    return workspace.events;
   }
 }

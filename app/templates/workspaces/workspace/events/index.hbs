@@ -1,5 +1,8 @@
 {{#each @model as |event|}}
-  <LinkTo @route="tool.events.event" @model={{event}}>
+  <LinkTo
+    @route="workspaces.workspace.events.event"
+    @models={{array this.workspace event}}
+  >
     {{moment-format event.date "YYYY-MM-DD"}} - {{event.name}}
   </LinkTo><br>
 {{/each}}
