@@ -1,6 +1,6 @@
 import Model, { attr } from '@ember-data/model';
 
-export default class VanueModel extends Model {
+export default class VenueModel extends Model {
   // Attributes
   @attr('number') capacity;
   @attr('string') name;
