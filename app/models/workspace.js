@@ -20,4 +20,8 @@ export default class WorkspaceModel extends Model {
   get displayLabel() {
     return this.name;
   }
+
+  get initials() {
+    return `${this.name.substring(0, 2)}`;
+  }
 }
