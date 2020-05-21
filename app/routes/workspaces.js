@@ -8,15 +8,15 @@ export default class ToolRoute extends Route.extend(
   AuthenticatedRouteMixin
 ) {
   // Services
-  @service currentUser;
   @service flashMessages;
   @service intl;
   @service session;
+  @service store;
 
 
   // Hooks
   model() {
-    return this.currentUser.user.workspaces;
+    return this.store.findAll('workspace');
   }
 
 

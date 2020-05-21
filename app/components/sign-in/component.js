@@ -26,23 +26,23 @@ export default class SignInComponent extends Component {
       await this.session.authenticate(authenticator, credentials);
       await this.currentUser.load();
     } catch(error) {
-      this._rejected.bind(this)
+      this._throwError(error);
     }
 
     if (this.session.isAuthenticated) {
-      this._authenticated.bind(this)
+      this._throwSuccess;
     }
   }
 
 
   // Privat functions
-  _authenticated() {
+  _throwSuccess() {
     const message = this.intl.t('signIn.successMessage');
 
     this.flashMessages.success(message);
   }
 
-  _rejected(reason) {
+  _throwError(reason) {
     this.flashMessages.warning(reason.statusText);
   }
 }
