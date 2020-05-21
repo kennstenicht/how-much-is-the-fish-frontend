@@ -6,6 +6,7 @@ import { action } from '@ember/object';
 export default class ApplicationComponent extends Component {
   // Services
   @service fastboot;
+  @service flashMessages;
   @service router;
   @service session;
 

@@ -76,6 +76,7 @@
     "edition": "octane"
   },
   "fastbootDependencies": [
-    "node-fetch"
+    "node-fetch",
+    "crypto"
   ]
 }

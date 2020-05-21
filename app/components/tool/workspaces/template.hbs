@@ -12,9 +12,13 @@
         {{workspace.initials}}
       </LinkTo>
     {{/each}}
-    <div block:class="button" block:add>
+    <LinkTo
+      @route="workspaces.new"
+      block:class="button"
+      block:add
+    >
       +
-    </div>
+    </LinkTo>
   </div>
   <div block:class="section">
     <div block:class="button">

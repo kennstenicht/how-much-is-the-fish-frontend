@@ -1,0 +1,4 @@
+<form {{on "submit" (route-action "save" @model)}}>
+  <Input @value={{@model.name}} />
+  <button type="submit">Save</button>
+</form>

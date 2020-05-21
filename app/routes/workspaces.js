@@ -22,16 +22,21 @@ export default class ToolRoute extends Route.extend(
 
   // Actions
   @action
-  save(model) {
-    model.save().then((model) => {
-      const modelName = model.constructor.modelName;
+  save(model, event) {
+    event.preventDefault();
 
+    const isNew = model.isNew;
+
+    model.save().then((model) => {
       const message = this.intl.t('admin.saveRecord', {
         title: model.displayLabel
       });
 
       this.flashMessages.success(message);
-      this.transitionToIndex(modelName);
+
+      if (isNew) {
+        this.transitionToByModel(model, true);
+      }
     }).catch(function(e) {
       console.log(e.message);
     });
@@ -39,23 +44,19 @@ export default class ToolRoute extends Route.extend(
 
   @action
   delete(model) {
-    const modelName = model.constructor.modelName;
-
     model.destroyRecord().then(() => {
       const message = this.intl.t('admin.deleteRecord', {
         title: model.title
       });
 
       this.flashMessages.success(message);
-      this.transitionToIndex(modelName);
+      this.transitionToByModel(model);
     })
   }
 
   @action
   cancel(model) {
-    const modelName = model.constructor.modelName;
-
-    this.transitionToIndex(modelName);
+    this.transitionToByModel(model);
   }
 
   @action
@@ -64,16 +65,32 @@ export default class ToolRoute extends Route.extend(
     const controller = this.controllerFor(`workspaces.workspace.${routeName}.index`);
 
     itemModels.forEach((record, index) => {
-      record.set('position', index);
+      record.position = index;
       record.save();
     });
 
-    controller.set('records', itemModels);
+    controller.records = itemModels;
   }
 
 
   // Functions
-  transitionToIndex(modelName) {
-    this.transitionTo(`workspaces.workspace.${pluralize(modelName)}`);
+  transitionToByModel(model, single) {
+    let modelName = model.constructor.modelName;
+    let indexRoute = pluralize(modelName);
+    let path = [];
+
+    if (modelName != 'workspace') {
+      path.push('workspaces.workspace');
+    }
+
+    path.push(indexRoute);
+
+    if (single) {
+      path.push(modelName);
+
+      return this.transitionTo(path.join('.'), model);
+    }
+
+    return this.transitionTo(path.join('.'));
   }
 }

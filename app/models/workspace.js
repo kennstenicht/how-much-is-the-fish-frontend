@@ -22,6 +22,8 @@ export default class WorkspaceModel extends Model {
   }
 
   get initials() {
-    return `${this.name.substring(0, 2)}`;
+    let name = this.name || '??';
+
+    return `${name.substring(0, 2)}`;
   }
 }

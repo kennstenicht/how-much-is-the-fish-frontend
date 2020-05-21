@@ -20,6 +20,8 @@ Router.map(function() {
         this.route('artist', { path: ':artist_id' });
         this.route('new');
       });
+      this.route('settings');
     });
+    this.route('new');
   });
 });
