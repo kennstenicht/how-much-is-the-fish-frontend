@@ -1,0 +1,8 @@
+{{#each @model as |venue|}}
+  <LinkTo
+    @route="workspaces.workspace.venues.venue"
+    @models={{array this.workspace venue}}
+  >
+    {{venue.name}}
+  </LinkTo><br>
+{{/each}}
